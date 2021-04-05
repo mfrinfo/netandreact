@@ -1,0 +1,10 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:SoftPlan}/src/Api.Application/SoftPlan.db",
+            "name": "SoftPlan"
+        }
+    ]
+}

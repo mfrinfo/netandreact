@@ -1,0 +1,17 @@
+import "jquery/src/jquery"
+import "jquery-slimscroll/jquery.slimscroll"
+import "admin-lte/plugins/jquery-ui/jquery-ui"
+import "admin-lte/plugins/bootstrap/js/bootstrap.bundle"
+import "admin-lte/plugins/bootstrap-switch/js/bootstrap-switch"
+import "admin-lte/dist/js/adminlte"
+import "./custom.js"
+
+import "admin-lte/plugins/fontawesome-free/css/all.min.css"
+import "bootstrap/dist/css/bootstrap.min.css"
+import "admin-lte/plugins/icheck-bootstrap"
+import "admin-lte/dist/css/adminlte.min.css"
+import "react-redux-toastr/lib/css/react-redux-toastr.min.css"
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+import "./custom.css"
+import "./select-search.css"
+

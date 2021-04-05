@@ -1,0 +1,22 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine AS build-env
+WORKDIR /src
+
+RUN pwsh -Command Write-Host "DOTNET - RESTAURANDO"
+COPY ./src .
+RUN dotnet restore
+
+RUN pwsh -Command Write-Host "DOTNET - PUBLICANDO"
+COPY . ./
+RUN dotnet publish -c Release -o /app/
+
+RUN pwsh -Command Write-Host "RUN TIME"
+# Build da imagem
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-alpine  AS runtime
+WORKDIR /app
+
+RUN apk add icu-libs
+ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
+
+COPY --from=build-env /app .
+
+ENTRYPOINT ["dotnet", "Api.Application.dll"]

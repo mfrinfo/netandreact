@@ -1,0 +1,15 @@
+version: '3.1'
+services:
+  api:
+    image: mfr_api
+    restart: always
+    container_name: mfr_api
+    ports:
+      - 5000:80
+    env_file:
+      - ./variables.env
+    networks:
+      - mfr-network
+networks: 
+  mfr-network:
+    driver: bridge
